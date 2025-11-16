@@ -538,19 +538,21 @@ const EnhancedDashboard = () => {
   if (isLoading && !alerts.length) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
       </div>
     );
   }
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900 to-gray-900 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950/10 to-indigo-950/20 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-10">
           <div>
-            <h1 className="text-4xl font-bold text-white mb-2">EdgeSentinel</h1>
-            <p className="text-gray-300">Visualizing relationships between network activity and security threats</p>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 mb-3">
+              Dashboard
+            </h1>
+            <p className="text-gray-400 text-lg">Real-time threat monitoring and analysis</p>
           </div>
           
           <div className="flex items-center gap-4">
@@ -573,7 +575,7 @@ const EnhancedDashboard = () => {
             <button 
               onClick={handleRefresh}
               disabled={isLoading}
-              className="btn-red-outline flex items-center"
+              className="btn-purple-outline flex items-center"
             >
               <FiRefreshCw className={`mr-2 ${isLoading ? 'animate-spin' : ''}`} />
               Refresh
@@ -582,7 +584,7 @@ const EnhancedDashboard = () => {
             {/* Test button */}
             <button 
               onClick={createTestAlert}
-              className="btn-red-primary"
+              className="btn-purple-primary"
             >
               Create Test Alert
             </button>
@@ -591,9 +593,9 @@ const EnhancedDashboard = () => {
         
         {/* Error message */}
         {error && (
-          <div className="glass border border-red-500/50 text-red-300 p-4 mb-6 rounded-xl">
-            <p className="font-bold">Connection Error</p>
-            <p>{error}</p>
+          <div className="glass-purple border-2 border-purple-500/50 text-purple-200 p-5 mb-6 rounded-2xl">
+            <p className="font-bold text-lg">Connection Error</p>
+            <p className="text-base">{error}</p>
           </div>
         )}
         

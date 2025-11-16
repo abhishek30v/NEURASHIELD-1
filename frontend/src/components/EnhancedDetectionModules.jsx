@@ -227,8 +227,8 @@ const EnhancedDetectionModules = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-2xl font-bold text-white">Enhanced Detection Modules</h2>
-          <p className="text-gray-400">Advanced threat detection capabilities</p>
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Enhanced Detection Modules</h2>
+          <p className="text-cyan-200 text-lg font-medium mt-2">Advanced threat detection capabilities</p>
         </div>
         <button
           onClick={loadModuleStatus}
@@ -242,9 +242,9 @@ const EnhancedDetectionModules = () => {
 
       {/* Error Message */}
       {error && (
-        <div className="glass border border-red-500/50 text-red-300 p-4 rounded-xl">
-          <p className="font-bold">Error</p>
-          <p>{error}</p>
+        <div className="glass-blue border-2 border-cyan-500/50 text-cyan-200 p-5 rounded-2xl">
+          <p className="font-bold text-lg">Error</p>
+          <p className="text-base">{error}</p>
         </div>
       )}
 
@@ -351,5 +351,6 @@ const EnhancedDetectionModules = () => {
 };
 
 export default EnhancedDetectionModules;
+
 
 

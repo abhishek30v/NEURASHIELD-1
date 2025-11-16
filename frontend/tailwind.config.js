@@ -5,7 +5,14 @@ module.exports = {
     "./public/index.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '70': '280px',
+      },
+      margin: {
+        '70': '280px',
+      },
+    },
   },
   plugins: [],
 } 

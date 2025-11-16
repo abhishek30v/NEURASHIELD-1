@@ -6,52 +6,52 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-black/50 backdrop-blur-sm py-10 px-8">
+    <footer className="bg-gradient-to-br from-slate-950 to-blue-950 backdrop-blur-xl py-12 px-8 border-t-2 border-cyan-500/30">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <Link to="/" className="flex items-center text-white text-2xl font-bold tracking-wider">
-              <FiShield className="mr-2 h-6 w-6" />
-              NeuralGuard
+            <Link to="/" className="flex items-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 text-3xl font-extrabold tracking-wide">
+              <FiShield className="mr-3 h-7 w-7 text-cyan-400" />
+              NeuroScan
             </Link>
-            <p className="text-gray-500 mt-2">
+            <p className="text-cyan-200 mt-3 text-lg font-medium">
               Advanced Cybersecurity Threat Detection
             </p>
           </div>
           
           <div className="flex flex-wrap gap-8">
-            <Link to="/about" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/about" className="text-cyan-300 hover:text-cyan-200 transition-colors font-medium text-base">
               About
             </Link>
-            <Link to="/how-it-works" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/how-it-works" className="text-cyan-300 hover:text-cyan-200 transition-colors font-medium text-base">
               How It Works
             </Link>
-            <Link to="/pricing" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/pricing" className="text-cyan-300 hover:text-cyan-200 transition-colors font-medium text-base">
               Pricing
             </Link>
-            <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/blog" className="text-cyan-300 hover:text-cyan-200 transition-colors font-medium text-base">
               Blog
             </Link>
-            <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/contact" className="text-cyan-300 hover:text-cyan-200 transition-colors font-medium text-base">
               Contact
             </Link>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-600 text-sm mb-4 md:mb-0">
-            © {currentYear} NeuralGuard. All rights reserved.
+          <p className="text-cyan-300 text-base font-medium mb-4 md:mb-0">
+            © {currentYear} NeuroScan. All rights reserved.
           </p>
           
-          <div className="flex gap-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-              <FiGithub size={20} />
+          <div className="flex gap-5">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors transform hover:scale-125">
+              <FiGithub size={24} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-              <FiTwitter size={20} />
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors transform hover:scale-125">
+              <FiTwitter size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-              <FiLinkedin size={20} />
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors transform hover:scale-125">
+              <FiLinkedin size={24} />
             </a>
           </div>
         </div>

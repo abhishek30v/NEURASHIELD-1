@@ -1,18 +1,21 @@
+import sys, os
+sys.path.append(os.path.dirname(__file__))
+
 """
 Enhanced NeuralShield Backend
 Integrates all advanced threat detection modules
 """
-
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Depends, HTTPException, status, BackgroundTasks, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List, Dict, Any, Optional
 import uuid
 import json
-import time
+import time 
 import asyncio
 from datetime import datetime, timedelta
 import logging
 import os
+
 from collections import deque
 from pydantic import BaseModel
 
@@ -64,7 +67,7 @@ except ImportError as e:
         ENHANCED_MODULES_AVAILABLE = False
 
 # Create FastAPI app
-app = FastAPI(title="Enhanced NeuralShield - Advanced Threat Detection API")
+app = FastAPI(title="Enhanced NeuroScan - Advanced Threat Detection API")
 
 # Add CORS middleware
 app.add_middleware(
@@ -227,7 +230,7 @@ async def broadcast_alert(alert):
 # API Endpoints
 @app.get("/")
 async def root():
-    return {"message": "Enhanced NeuralShield - Advanced Threat Detection API", "version": "2.0.0"}
+    return {"message": "Enhanced NeuroScan - Advanced Threat Detection API", "version": "2.0.0"}
 
 @app.get("/health")
 async def health_check():
@@ -866,7 +869,7 @@ async def cleanup_test_samples():
 
 @app.on_event("startup")
 async def startup_event():
-    logger.info("Enhanced NeuralShield Backend started with all advanced detection modules")
+    logger.info("Enhanced NeuroScan Backend started with all advanced detection modules")
 
 if __name__ == "__main__":
     import uvicorn

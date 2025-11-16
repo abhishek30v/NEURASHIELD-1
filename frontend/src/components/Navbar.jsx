@@ -8,41 +8,41 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full px-8 py-4 flex justify-between items-center z-50 glass-red border-b border-red-primary/30">
+    <nav className="fixed top-0 left-0 w-full px-8 py-5 flex justify-between items-center z-50 glass-blue border-b-2 border-cyan-500/40 shadow-lg">
       {/* Logo */}
       <Link to="/" className="flex items-center">
-        <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center mr-2 glow-red">
-          <FiShield className="text-white text-xl" />
+        <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mr-3 glow-blue shadow-lg">
+          <FiShield className="text-white text-2xl" />
         </div>
-        <span className="text-white font-semibold text-2xl ml-2">EdgeSentinel</span>
+        <span className="text-white font-bold text-3xl ml-2 tracking-tight">NeuroScan</span>
       </Link>
       
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-8">
-        <Link to="/" className="text-white hover:text-red-primary transition-colors">
+      <div className="hidden md:flex items-center gap-10">
+        <Link to="/" className="text-white hover:text-cyan-400 transition-colors font-medium text-lg">
           Home
         </Link>
-        <Link to="/dashboard" className="text-white hover:text-red-primary transition-colors">
+        <Link to="/dashboard" className="text-white hover:text-cyan-400 transition-colors font-medium text-lg">
           Dashboard
         </Link>
-        <Link to="/detection-modules" className="text-white hover:text-red-primary transition-colors">
+        <Link to="/detection-modules" className="text-white hover:text-cyan-400 transition-colors font-medium text-lg">
           Detection Modules
         </Link>
-        <Link to="/test-suite" className="text-white hover:text-red-primary transition-colors">
+        <Link to="/test-suite" className="text-white hover:text-cyan-400 transition-colors font-medium text-lg">
           Test Suite
         </Link>
 
         {user ? (
           <button
             onClick={signOut}
-            className="ml-4 btn-red-outline px-4 py-2"
+            className="ml-4 btn-blue-outline px-5 py-2.5"
           >
             Sign Out
           </button>
         ) : (
           <Link
             to="/auth"
-            className="ml-4 btn-red-primary px-4 py-2"
+            className="ml-4 btn-blue-primary px-5 py-2.5"
           >
             Try Now
           </Link>
@@ -59,32 +59,32 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 glass-red border-b border-red-primary/30 py-4 px-8">
-          <div className="flex flex-col gap-4">
+        <div className="md:hidden absolute top-20 left-0 right-0 glass-blue border-b-2 border-cyan-500/40 py-5 px-8 shadow-xl">
+          <div className="flex flex-col gap-5">
             <Link 
               to="/" 
-              className="text-white hover:text-red-primary transition-colors py-2"
+              className="text-white hover:text-cyan-400 transition-colors py-2.5 font-medium text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/dashboard" 
-              className="text-white hover:text-red-primary transition-colors py-2"
+              className="text-white hover:text-cyan-400 transition-colors py-2.5 font-medium text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               Dashboard
             </Link>
             <Link 
               to="/detection-modules" 
-              className="text-white hover:text-red-primary transition-colors py-2"
+              className="text-white hover:text-cyan-400 transition-colors py-2.5 font-medium text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               Detection Modules
             </Link>
             <Link 
               to="/test-suite" 
-              className="text-white hover:text-red-primary transition-colors py-2"
+              className="text-white hover:text-cyan-400 transition-colors py-2.5 font-medium text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               Test Suite
@@ -96,14 +96,14 @@ const Navbar = () => {
                   signOut();
                   setMobileMenuOpen(false);
                 }}
-                className="mt-2 btn-red-outline px-4 py-2"
+                className="mt-3 btn-blue-outline px-5 py-2.5"
               >
                 Sign Out
               </button>
             ) : (
               <Link
                 to="/auth"
-                className="mt-2 btn-red-outline px-4 py-2"
+                className="mt-3 btn-blue-outline px-5 py-2.5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Try Now

